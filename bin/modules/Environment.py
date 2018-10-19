@@ -56,6 +56,21 @@ class Environment :
 							,Active		NUMERIC DEFAULT 1
 							,Created	DATETIME DEFAULT current_timestamp
 						);
+
+                        CREATE TABLE IF NOT EXISTS Subscribed (
+                             Id         INTEGER PRIMARY KEY
+                            ,UserId     INTEGER NOT NULL
+                            ,SiteId     INTEGER NOT NULL
+                            ,DOW        TEXT NOT NULL 
+                                # The DOW field format is as follows: weekday (0-6, 0 = Sunday, * = Everyday).
+                                # Ranges can be used as: 1-5 = Monday through Friday
+   
+                            ,Time       NUMERIC DEFAULT 800
+                                # Time field is numeric (no alpha characters allowed). 
+                                # Time format is in 24 hr format, no colon: e.g. 800 = 8:00 AM, 2300 = 11:00 PM
+
+                            ,Created    DATETIME DEFAULT current_timestamp
+                        );
 							
 						CREATE TABLE IF NOT EXISTS Quotes (
 							 Id			INTEGER PRIMARY KEY

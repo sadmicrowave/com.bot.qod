@@ -133,7 +133,8 @@ if __name__ == "__main__":
 	
 	finally :
 	
-		# if the environment object variable still exists then utilize the log object variable to add an exception entry to the log, since we can't email it apparently
+		# if the environment object variable still exists then utilize the log object variable to add an exception 
+		# entry to the log, since we can't email it apparently
 		if e and e.log : 	
 			e.log.info( '*** PROGRAM EXITING. ***\n' )
 		

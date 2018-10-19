@@ -41,7 +41,7 @@ class Models :
 		"""
 		
 		return """
-				SELECT * FROM Quotes WHERE Quote = "%s";
+				SELECT * FROM Quotes WHERE Quote = "%s" or Quote LIKE "%%s%";
 		""" % quote
 		
 		
